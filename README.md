@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Book Listing Application fetches data from the [Gutendex API](https://gutendex.com/books) and allows users to browse a collection of books. Users can search for books by title, filter them by genre, manage a wishlist, and paginate through the book list. The application is built using **Vanilla JavaScript**, HTML, and CSS, with a focus on a clean and responsive design.
+This Book Listing Application fetches data from the [Gutendex API](https://gutendex.com/books) and allows users to browse a collection of books. Users can search for books by title, filter them by genre, manage a wishlist, and paginate through the book list.
 
 ## Features
 
@@ -21,10 +21,9 @@ This Book Listing Application fetches data from the [Gutendex API](https://guten
 - React router dom - for routing
 
 ## Installation
-
-To get started with the project, follow these steps:
-
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/book-listing-app.git
-# books
+   git clone https://github.com/moyuriakther/books
+2. cd books
+3. npm install
+4. npm run dev
