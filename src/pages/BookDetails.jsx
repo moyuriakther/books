@@ -5,8 +5,11 @@ import { useState, useEffect } from 'react';
 
 const BookDetails = () => {
   const { id } = useParams();
+  console.log(id)
   const dispatch = useDispatch();
-
+  // if(!id){
+  //   return <p>Loading...</p>
+  //   }
   const book = useSelector((state) =>
     state.books.books.find((b) => b.id === parseInt(id))
   );
@@ -15,8 +18,8 @@ const BookDetails = () => {
 
   useEffect(() => {
     // Check if the book is already in the wishlist
-    setIsWishlisted(wishlist.some((item) => item.id === book.id));
-  }, [wishlist, book.id]);
+    setIsWishlisted(wishlist.some((item) => item.id === book?.id));
+  }, [wishlist, book]);
 
    const handleWishlistToggle = () => {
     if (isWishlisted) {
@@ -26,9 +29,7 @@ const BookDetails = () => {
     }
   };
 
-
-console.log(book)
-  if (!book) return <p>Book not found.</p>;
+  if (!book) return <p className="text-center text-lg mt-10">Loading book details...</p>;
   
   return (
     <div className="max-w-4xl mx-auto p-6 sm:p-8 bg-white shadow-lg rounded-lg mt-10">

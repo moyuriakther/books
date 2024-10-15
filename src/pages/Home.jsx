@@ -40,7 +40,7 @@ const Home = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        {currentBooks.map((book) => (
+        {currentBooks?.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
       </div>
