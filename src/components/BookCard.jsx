@@ -24,23 +24,28 @@ const BookCard = ({ book }) => {
   };
 
   return (
-    <div className="p-4 border rounded-lg shadow-md">
-        <img src={book.formats['image/jpeg']} alt={book.title} className="h-40 w-full object-cover" />
-        <h2 className="text-xl font-bold">Title: {book.title}</h2>
-        <p>Author Names: {book.authors.map((author) => author.name).join(', ')}</p>
-        <p>ID: {book.id}</p>
-      <div className="flex items-center justify-between mt-4">
-        <button
-          onClick={handleWishlistToggle}
-          className={`text-2xl ${
-            isWishlisted ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
-          } transition-colors duration-300`}
-        >
-          ♥
-        </button>
-      </div>
-      <Link to={`/book/${book.id}`} className="text-blue-500">View Details</Link>
+    <div className="p-4 border rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <img
+      src={book.formats['image/jpeg']}
+      alt={book.title}
+      className="h-40 w-full object-cover rounded-lg transition-opacity duration-300 ease-in-out"
+    />
+    <h2 className="text-xl font-bold mt-2">{book.title}</h2>
+    <p className="text-gray-600">Authors: {book.authors.map((author) => author.name).join(', ')}</p>
+    <p className="text-gray-600">ID: {book.id}</p>
+    <div className="flex items-center justify-between mt-4">
+      <button
+        onClick={handleWishlistToggle}
+        className={`text-3xl transition-transform duration-300 ${
+          isWishlisted ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
+        }`}
+        aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+      >
+        ♥
+      </button>
     </div>
+    <Link to={`/book/${book.id}`} className="text-blue-500 underline mt-2 block">View Details</Link>
+  </div>
   );
 };
 

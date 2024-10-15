@@ -10,7 +10,8 @@ export default function Navbar() {
     };
   return (
     <nav className="bg-gray-800 text-white p-4 flex items-center justify-between">
-    <h1 className="text-2xl font-bold">Book Listing</h1>
+    <h1 className="text-2xl font-bold">  <a href="/" className="hover:text-gray-400">Book Listing</a></h1>
+
     <div className="flex items-center gap-4">
       <input
         type="text"

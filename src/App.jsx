@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Wishlist from './pages/Wishlist';
 import BookDetails from './pages/BookDetails';
 import { fetchBooks } from './redux/booksSlice';
+import NotFound from './pages/NotFound';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/book/:id" element={<BookDetails />} />
+        <Route path="*" component={NotFound} /> 
       </Routes>
     </Router>
   );
